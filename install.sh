@@ -58,6 +58,46 @@ stderr_logfile_maxbytes=1MB
 autorestart=true
 startretries=3
 
+[program:niubiwa_5]
+command=${SCRIPT_DIR}/niubiwa -v --queue=5 --min=4 --max=4
+user=root
+stderr_logfile=/var/log/niubiwa_5.err.log
+stdout_logfile=/var/log/niubiwa_5.out.log
+stdout_logfile_maxbytes=1MB
+stderr_logfile_maxbytes=1MB
+autorestart=true
+startretries=3
+
+[program:niubiwa_6]
+command=${SCRIPT_DIR}/niubiwa -v --queue=6 --min=4 --max=4
+user=root
+stderr_logfile=/var/log/niubiwa_6.err.log
+stdout_logfile=/var/log/niubiwa_6.out.log
+stdout_logfile_maxbytes=1MB
+stderr_logfile_maxbytes=1MB
+autorestart=true
+startretries=3
+
+[program:niubiwa_7]
+command=${SCRIPT_DIR}/niubiwa -v --queue=7 --min=4 --max=4
+user=root
+stderr_logfile=/var/log/niubiwa_7.err.log
+stdout_logfile=/var/log/niubiwa_7.out.log
+stdout_logfile_maxbytes=1MB
+stderr_logfile_maxbytes=1MB
+autorestart=true
+startretries=3
+
+[program:niubiwa_8]
+command=${SCRIPT_DIR}/niubiwa -v --queue=8 --min=4 --max=4
+user=root
+stderr_logfile=/var/log/niubiwa_8.err.log
+stdout_logfile=/var/log/niubiwa_8.out.log
+stdout_logfile_maxbytes=1MB
+stderr_logfile_maxbytes=1MB
+autorestart=true
+startretries=3
+
 EOF
 
 # 重载supervisor配置
