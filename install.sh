@@ -3,8 +3,11 @@ apt-get update
 apt-get install libev-dev libnetfilter-queue-dev
 apt-get install -y supervisor
 
+# 获取系统架构信息 aarch64/x86_64
+ARCH=$(uname -m)
+
 # 获取当前脚本的目录
-SCRIPT_DIR=$(pwd)
+SCRIPT_DIR="$(pwd)/${ARCH}"
 
 # 创建并配置启动脚本
 cat << EOF > /etc/supervisor/conf.d/nb301.conf
