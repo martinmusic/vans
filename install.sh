@@ -1,6 +1,6 @@
 #!/bin/bash
 apt-get update
-apt-get install libev-dev libnetfilter-queue-dev
+apt-get install -y libev-dev libnetfilter-queue-dev
 apt-get install -y supervisor
 
 # 获取系统架构信息 aarch64/x86_64
