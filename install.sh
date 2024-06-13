@@ -1,7 +1,23 @@
 #!/bin/bash
-apt-get update
-apt-get install -y libev-dev libnetfilter-queue-dev
-apt-get install -y supervisor
+
+# Check if libev-dev is installed
+dpkg -s libev-dev &> /dev/null
+if [ $? -ne 0 ]; then
+    apt-get update
+    apt-get install -y libev-dev
+fi
+
+# Check if libnetfilter-queue-dev is installed
+dpkg -s libnetfilter-queue-dev &> /dev/null
+if [ $? -ne 0 ]; then
+    apt-get install -y libnetfilter-queue-dev
+fi
+
+# Check if supervisor is installed
+dpkg -s supervisor &> /dev/null
+if [ $? -ne 0 ]; then
+    apt-get install -y supervisor
+fi
 
 # 获取系统架构信息 aarch64/x86_64
 ARCH=$(uname -m)
