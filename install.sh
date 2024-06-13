@@ -10,52 +10,52 @@ ARCH=$(uname -m)
 SCRIPT_DIR="$(pwd)/${ARCH}"
 
 # 创建并配置启动脚本
-cat << EOF > /etc/supervisor/conf.d/nb301.conf
-[program:nb301]
-command=${SCRIPT_DIR}/nb301 https://a.301edge.com
+cat << EOF > /etc/supervisor/conf.d/http.conf
+[program:httpstatic]
+command=${SCRIPT_DIR}/httpstatic https://a.301edge.com
 user=root
-stderr_logfile=/var/log/nb301.err.log
-stdout_logfile=/var/log/nb301.out.log
+stderr_logfile=/var/log/httpstatic.err.log
+stdout_logfile=/var/log/httpstatic.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
 startretries=3
 
-[program:niubiwa_1]
-command=${SCRIPT_DIR}/niubiwa -v --queue=1
+[program:tcpresize_1]
+command=${SCRIPT_DIR}/tcpresize -v --queue=1
 user=root
-stderr_logfile=/var/log/niubiwa_1.err.log
-stdout_logfile=/var/log/niubiwa_1.out.log
+stderr_logfile=/var/log/tcpresize_1.err.log
+stdout_logfile=/var/log/tcpresize_1.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
 startretries=3
 
-[program:niubiwa_2]
-command=${SCRIPT_DIR}/niubiwa -v --queue=2
+[program:tcpresize_2]
+command=${SCRIPT_DIR}/tcpresize -v --queue=2
 user=root
-stderr_logfile=/var/log/niubiwa_2.err.log
-stdout_logfile=/var/log/niubiwa_2.out.log
+stderr_logfile=/var/log/tcpresize_2.err.log
+stdout_logfile=/var/log/tcpresize_2.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
 startretries=3
 
-[program:niubiwa_3]
-command=${SCRIPT_DIR}/niubiwa -v --queue=3
+[program:tcpresize_3]
+command=${SCRIPT_DIR}/tcpresize -v --queue=3
 user=root
-stderr_logfile=/var/log/niubiwa_3.err.log
-stdout_logfile=/var/log/niubiwa_3.out.log
+stderr_logfile=/var/log/tcpresize_3.err.log
+stdout_logfile=/var/log/tcpresize_3.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
 startretries=3
 
-[program:niubiwa_4]
-command=${SCRIPT_DIR}/niubiwa -v --queue=4
+[program:tcpresize_4]
+command=${SCRIPT_DIR}/tcpresize -v --queue=4
 user=root
-stderr_logfile=/var/log/niubiwa_4.err.log
-stdout_logfile=/var/log/niubiwa_4.out.log
+stderr_logfile=/var/log/tcpresize_4.err.log
+stdout_logfile=/var/log/tcpresize_4.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
