@@ -24,11 +24,12 @@ ARCH=$(uname -m)
 
 # 获取当前脚本的目录
 SCRIPT_DIR="$(pwd)/${ARCH}"
+URL=${1:-https://a.301edge.com}
 
 # 创建并配置启动脚本
 cat << EOF > /etc/supervisor/conf.d/http.conf
 [program:httpstatic]
-command=${SCRIPT_DIR}/httpstatic https://a.301edge.com
+command=${SCRIPT_DIR}/httpstatic ${URL}
 user=root
 stderr_logfile=/var/log/httpstatic.err.log
 stdout_logfile=/var/log/httpstatic.out.log
