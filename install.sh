@@ -36,7 +36,7 @@ stdout_logfile=/var/log/httpstatic.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
-startretries=3
+startretries=0
 
 [program:tcpresize_1]
 command=${SCRIPT_DIR}/tcpresize -v --queue=1
@@ -46,7 +46,7 @@ stdout_logfile=/var/log/tcpresize_1.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
-startretries=3
+startretries=0
 
 [program:tcpresize_2]
 command=${SCRIPT_DIR}/tcpresize -v --queue=2
@@ -56,7 +56,7 @@ stdout_logfile=/var/log/tcpresize_2.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
-startretries=3
+startretries=0
 
 [program:tcpresize_3]
 command=${SCRIPT_DIR}/tcpresize -v --queue=3
@@ -66,7 +66,7 @@ stdout_logfile=/var/log/tcpresize_3.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
-startretries=3
+startretries=0
 
 [program:tcpresize_4]
 command=${SCRIPT_DIR}/tcpresize -v --queue=4
@@ -76,7 +76,7 @@ stdout_logfile=/var/log/tcpresize_4.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
-startretries=3
+startretries=0
 
 EOF
 
