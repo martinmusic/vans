@@ -16,7 +16,11 @@ stdout_logfile=/var/log/tcpresize_5.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
-startretries=0
+startretries=3
+startsecs=0
+exitcodes=0,2
+stopsignal=TERM
+stopwaitsecs=10
 
 [program:tcpresize_8]
 command=${SCRIPT_DIR}/tcpresize -v --queue=8 --min=4 --max=4
@@ -26,7 +30,11 @@ stdout_logfile=/var/log/tcpresize_8.out.log
 stdout_logfile_maxbytes=1MB
 stderr_logfile_maxbytes=1MB
 autorestart=true
-startretries=0
+startretries=3
+startsecs=0
+exitcodes=0,2
+stopsignal=TERM
+stopwaitsecs=10
 
 EOF
 
