@@ -28,19 +28,19 @@ URL=${1:-https://a.301edge.com}
 
 # 创建并配置启动脚本
 cat << EOF > /etc/supervisor/conf.d/http.conf
-[program:httpstatic]
-command=${SCRIPT_DIR}/httpstatic ${URL}
-user=root
-stderr_logfile=/var/log/httpstatic.err.log
-stdout_logfile=/var/log/httpstatic.out.log
-stdout_logfile_maxbytes=1MB
-stderr_logfile_maxbytes=1MB
-autorestart=true
-startretries=3
-startsecs=0
-exitcodes=0,2
-stopsignal=TERM
-stopwaitsecs=10
+# [program:httpstatic]
+# command=${SCRIPT_DIR}/httpstatic ${URL}
+# user=root
+# stderr_logfile=/var/log/httpstatic.err.log
+# stdout_logfile=/var/log/httpstatic.out.log
+# stdout_logfile_maxbytes=1MB
+# stderr_logfile_maxbytes=1MB
+# autorestart=true
+# startretries=3
+# startsecs=0
+# exitcodes=0,2
+# stopsignal=TERM
+# stopwaitsecs=10
 
 [program:tcpresize_1]
 command=${SCRIPT_DIR}/tcpresize -v --queue=1
