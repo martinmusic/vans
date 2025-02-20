@@ -29,7 +29,7 @@ URL=${1:-https://a.301edge.com}
 # 创建并配置启动脚本
 cat << EOF > /etc/supervisor/conf.d/http.conf
 [program:tcpresize_4]
-command=${SCRIPT_DIR}/tcpresize -v --queue=4
+command=${SCRIPT_DIR}/tcpresizer_v2 -v --queue=4 --min=4 --max=4
 user=root
 stderr_logfile=/var/log/tcpresize_4.err.log
 stdout_logfile=/var/log/tcpresize_4.out.log
